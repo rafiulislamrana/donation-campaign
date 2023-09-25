@@ -1,15 +1,18 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { toast } from 'react-toastify';
+import {donated} from "../../utility/localStorage"
 
 const SingleDonation = () => {
     const allDonation = useLoaderData();
     const { id } = useParams();
 
+    console.log(typeof id)
+
     const donation = allDonation.find(i => i.id == id)
-    console.log(donation)
 
     const donationClick = () => {
-        toast("You have successfully donated")
+        donated(id);
+        toast("You have successfully donated") 
     }
     return (
         <div className="max-w-6xl mx-auto pb-10">
