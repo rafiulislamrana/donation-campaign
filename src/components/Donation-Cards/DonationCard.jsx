@@ -1,3 +1,4 @@
+// eslint-disable-next-line react/prop-types
 const DonationCard = ({ donation }) => {
     // eslint-disable-next-line react/prop-types
     const { picture, category_bg, text, category, title, price } = donation;
