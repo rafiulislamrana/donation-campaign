@@ -1,18 +1,26 @@
-// import Donations from "../Donation-Cards/Donations";
+import { useLoaderData } from "react-router-dom";
+import DonationCard from "../Donation-Cards/DonationCard";
+import { useEffect, useState } from "react";
+import { getStored } from "../../utility/localStorage";
 
 const Donation = () => {
-    return (
-        <div>
-            {/* <Donations></Donations> */}
+    const donation = useLoaderData();
+    const [pastDonation, setpastDonation] = useState([])
+    useEffect(() => {
+        const pastDonationId = getStored()
 
-            {/* <div>
-            <img src={picture} alt="Donation" />
-                <div className="card-body">
-                    <p style={{ background: category_bg, color: text }} className="font-medium max-w-fit px-3 py-1 rounded">{category}</p>
-                    <h2 style={{ color: text }} className="card-title rounded-lg">{
-                        title}</h2>
-                </div>
-            </div> */}
+        const past = donation.filter(donation => pastDonationId.includes(donation.id));
+        setpastDonation(past)
+
+    }, [])
+    console.log(pastDonation)
+    return (
+        <div className="max-w-6xl mx-auto pb- pt-10">
+            <div className="grid grid-cols-2 gap-6">
+                {
+                    pastDonation.map(donation => <DonationCard key={donation.id} donation={donation}></DonationCard>)
+                }
+            </div>
         </div>
     );
 };

@@ -5,13 +5,14 @@ import {donated} from "../../utility/localStorage"
 const SingleDonation = () => {
     const allDonation = useLoaderData();
     const { id } = useParams();
+    const integerId = parseInt(id)
 
-    console.log(typeof id)
+    console.log(integerId)
 
     const donation = allDonation.find(i => i.id == id)
 
     const donationClick = () => {
-        donated(id);
+        donated(integerId);
         toast("You have successfully donated") 
     }
     return (
