@@ -16,13 +16,13 @@ const SingleDonation = () => {
         toast("You have successfully donated") 
     }
     return (
-        <div className="max-w-6xl mx-auto pb-10">
+        <div className="max-w-6xl mx-auto pb-10 px-3">
             <div className="relative">
                 <div className="bg-[#0B0B0B80] w-full bottom-0 rounded-b-lg absolute py-10 pl-10 z-[1]">
                     <Link style={{ background: donation.text }} className="px-6 py-4 z-[2] rounded text-white font-semibold text-xl" onClick={donationClick}>Donate {donation.price}</Link>
                 </div>
 
-                <img className="w-full h-[550px] object-cover rounded-lg" src={donation.picture} alt="" />
+                <img className="w-full h-[350px] lg:h-[550px] object-cover rounded-lg" src={donation.picture} alt="" />
 
             </div>
             <div>

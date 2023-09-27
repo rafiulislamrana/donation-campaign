@@ -3,7 +3,7 @@ import "./header.css"
 
 const Header = () => {
     return (
-        <div className="navbar py-8 max-w-6xl mx-auto">
+        <div className="navbar flex-col md:flex-row py-8 max-w-6xl mx-auto">
             <div className="flex-1">
                 <img src="https://i.ibb.co/L8sjbxc/Logo.png" alt="" />
             </div>
