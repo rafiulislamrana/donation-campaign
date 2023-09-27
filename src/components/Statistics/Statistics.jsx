@@ -42,8 +42,6 @@ const Statistics = () => {
     
     const COLORS = ["#FF444A", "#00C49F"];
 
-    console.log(pastDonation)
-
     return (
         <div className="text-center max-auto">
             <ResponsiveContainer className="max-auto" width="100%" height={250}>

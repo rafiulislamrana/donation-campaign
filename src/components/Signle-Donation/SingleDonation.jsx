@@ -1,13 +1,11 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { toast } from 'react-toastify';
-import {donated} from "../../utility/localStorage"
+import {getStored, donated} from "../../utility/localStorage"
 
 const SingleDonation = () => {
     const allDonation = useLoaderData();
     const { id } = useParams();
     const integerId = parseInt(id)
-
-    console.log(integerId)
 
     const donation = allDonation.find(i => i.id == id)
 

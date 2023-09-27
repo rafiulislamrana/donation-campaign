@@ -12,7 +12,7 @@ const Home = () => {
     
 
     useEffect(() => {
-        fetch('../../../public/donation-details.json')
+        fetch('donation-details.json')
             .then(res => res.json())
             .then(data =>  {setDonation(data); setrepDonation(data);})
     }, [])
@@ -33,7 +33,6 @@ const Home = () => {
         setrepDonation(filteredDonation)
     }
 
-    console.log(repDonation)
     return (
         <div>
             {/* Banner Section */}

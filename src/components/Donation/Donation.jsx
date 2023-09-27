@@ -7,21 +7,20 @@ const Donation = () => {
     const donation = useLoaderData();
     const [pastDonation, setpastDonation] = useState([])
     const [length, setLength] = useState(4);
-    const [state, setState] = useState("");
+    const [state, setState] = useState("hidden");
     const [nue, setNue] = useState("");
+    const [isHidden, setisHidden] = useState(false)
     useEffect(() => {
         const pastDonationId = getStored()
 
         const past = donation.filter(donation => pastDonationId.includes(donation.id));
         setpastDonation(past);
-        if (pastDonation.length < 4) {
-            setState("hidden");
-        }
-        else {
-            setState("");
-
-        }
+        
+        const bla = pastDonation.length < 5 ? true : false;
+        setisHidden(bla)
     }, [pastDonation]);
+
+  
 
 
     const showAll = () => {
@@ -30,7 +29,7 @@ const Donation = () => {
 
     }
 
-    let isHidden = false;
+    
 
 
 
